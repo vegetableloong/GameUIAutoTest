@@ -1,0 +1,10 @@
+#控制用例顺序
+#主要控制模块和类的执行顺序，按顺序执行，用例类内部的执行顺序自行通过@pytest.mark.order控制
+
+#登录在main单独执行，失败会直接结束整个进度
+
+#Remi
+- modules/function/Remi/test_remiEnter.py::TestRemiEnter
+
+#QIUQIU
+- modules/function/QiuQIu/test_qiuqiuEnter.py::TestQiuqiuEnter

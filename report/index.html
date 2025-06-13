@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>测试报告</title>
+  <style>
+    body {
+      display: flex;
+      gap: 100px;
+      padding: 100px;
+      font-family: Arial, sans-serif;
+      background-image: url('public/background.gif');  /* 添加这一行 */
+      background-size: 15%;
+      background-repeat: no-repeat;             /* 防止重复平铺 */
+      background-position: top;       /* 居中显示背景图 */
+    }
+    div:first-child {  /* 表格的外层div */
+      width: 60%;   /* 调大这个宽度，默认没写宽度就是auto，改成70%更宽 */
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #eef;
+    }
+
+    #chartContainer {
+      width: 40%;
+      max-width: 300px;
+      min-width: 300px;
+    }
+    #LineCountContainer {
+      width: 60%;
+      max-width: 500px;
+      min-width: 500px;
+    }
+    button {
+      padding: 5px 10px;
+      cursor: pointer;
+      background-color: #6495ED;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #4169E1;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h2>测试报告</h2>
+    <table id="dynamicTable">
+      <thead>
+        <tr id="tableHeader"></tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <div style="display: flex; flex-direction: column;">
+    <div id="chartContainer" style="margin-bottom: 40px;">
+      <h2 style="margin-left: 60px;">近期报告通过率</h2>
+      <canvas id="pieChart"></canvas>
+    </div>
+    <div id="LineCountContainer">
+      <h2 style="margin-left: 60px;"> 近期失败用例统计</h2>
+      <canvas id="summaryChart"></canvas>
+    </div>
+  </div>
+
+
+  <!-- 引入 Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="report.js"></script>
+</body>
+</html>

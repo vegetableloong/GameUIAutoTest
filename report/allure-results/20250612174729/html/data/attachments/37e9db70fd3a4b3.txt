@@ -1,0 +1,50 @@
+DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 wait-for-device
+DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell getprop ro.build.version.sdk
+WARNING  airtest.core.api:helper.py:57 Device:emulator-5554 updated <airtest.core.android.android.Android object at 0x000002902D799B20> -> <airtest.core.android.android.Android object at 0x000002902DE24FD0>
+DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell dumpsys package com.netease.nie.yosemite
+DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 forward --no-rebind tcp:18812 localabstract:javacap_18812
+DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell pm path com.netease.nie.yosemite
+DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell CLASSPATH=/data/app/com.netease.nie.yosemite-QDakP4cbYaOG9cISZ6t3_g==/base.apk exec app_process /system/bin com.netease.nie.yosemite.Capture --scale 100 --socket javacap_18812 -lazy 2>&1
+DEBUG    airtest.utils.nbsp:nbsp.py:37 [javacap_sever]b'Capture server listening on @javacap_18812'
+DEBUG    airtest.core.android.cap_methods.javacap:javacap.py:77 (1, 3, 0, 2400, 1080, 0, 0, 0, 1)
+INFO     airtest.core.api:cv.py:59 Try finding: Template(E:\AUTO\pythonProject\modules\function\Remi\img\remi_enter.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.00 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (547, 458), 'rectangle': ((455, 390), (455, 526), (640, 526), (640, 390)), 'confidence': 0.27782657742500305}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.06 s.
+DEBUG    airtest.core.api:cv.py:189 try match with SIFTMatching
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.42 s.
+DEBUG    airtest.core.api:cv.py:189 try match with BRISKMatching
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.09 s.
+DEBUG    airtest.core.api:cv.py:155 match result: None
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.00 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (547, 458), 'rectangle': ((455, 390), (455, 526), (640, 526), (640, 390)), 'confidence': 0.27782657742500305}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.06 s.
+DEBUG    airtest.core.api:cv.py:189 try match with SIFTMatching
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.43 s.
+DEBUG    airtest.core.api:cv.py:189 try match with BRISKMatching
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.09 s.
+DEBUG    airtest.core.api:cv.py:155 match result: None
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.00 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (547, 458), 'rectangle': ((455, 390), (455, 526), (640, 526), (640, 390)), 'confidence': 0.27782657742500305}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.06 s.
+DEBUG    airtest.core.api:cv.py:189 try match with SIFTMatching
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.42 s.
+DEBUG    airtest.core.api:cv.py:189 try match with BRISKMatching
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.09 s.
+DEBUG    airtest.core.api:cv.py:155 match result: None
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.00 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (547, 458), 'rectangle': ((455, 390), (455, 526), (640, 526), (640, 390)), 'confidence': 0.27782657742500305}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.06 s.
+DEBUG    airtest.core.api:cv.py:189 try match with SIFTMatching
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.42 s.
+DEBUG    airtest.core.api:cv.py:189 try match with BRISKMatching
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.10 s.
+DEBUG    airtest.core.api:cv.py:155 match result: None

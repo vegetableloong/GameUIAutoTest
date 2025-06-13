@@ -1,0 +1,8 @@
+{
+  "name": "20250612174430",
+  "sum": 2,
+  "passed": 1,
+  "failExample": [
+    "TestLogin#test_appstart"
+  ]
+}
