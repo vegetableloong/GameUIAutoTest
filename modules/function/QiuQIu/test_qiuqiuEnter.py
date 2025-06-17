@@ -1,12 +1,9 @@
 # test_mm.py
 # -*- coding:utf-8 -*-
 #控制模块和类的执行顺序用/order.yaml配置，用例类内部的执行顺序自行通过@pytest.mark.order控制
-import allure
-import os
-from airtest.core.api import *
-from modules.commond.sceenShot import *
-from modules.commond.imgDict import *
+
 from modules.commond.close.closeAllWindows import *
+from modules.commond.existsClick import *
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 #获取相关图片路径
@@ -18,17 +15,8 @@ class TestQiuqiuEnter:
 
     def test_enter(self):
         #进入QIUQIU选关界面
-        e = exists(Template(imgDict['qiuqiu_enter']))
-        if e:
-            click(e)
-        else:
-            assert False,'找不到QIUQIU入口'
-
+        exists_and_click(imgDict['qiuqiu_enter'],'找不到QIUQIU入口')
 
     def test_back(self):
         #返回主界面
-        e = exists(Template(imgDict['back']))
-        if e:
-            click(e)
-        else:
-            assert False,'找不到返回按钮'
+        exists_and_click(imgDict['back'], '找不到返回按钮')
