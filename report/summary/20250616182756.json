@@ -1,0 +1,11 @@
+{
+  "name": "20250616182756",
+  "sum": 8,
+  "passed": 4,
+  "failExample": [
+    "TestQiuqiuEnter#test_back",
+    "TestRemiEnter#test_back",
+    "TestRemiEnter#test_enter",
+    "TestQiuqiuEnter#test_enter"
+  ]
+}

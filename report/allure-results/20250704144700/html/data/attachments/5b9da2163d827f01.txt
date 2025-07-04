@@ -1,0 +1,21 @@
+INFO     airtest.core.api:cv.py:59 Try finding: Template(E:\AUTO\pythonProject\modules\function\Remi\img\remi_enter.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.00 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (788, 751), 'rectangle': ((696, 683), (696, 819), (881, 819), (881, 683)), 'confidence': 0.2991800606250763}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.09 s.
+DEBUG    airtest.core.api:cv.py:189 try match with SIFTMatching
+DEBUG    airtest.aircv.keypoint_base:keypoint_base.py:85 [SIFT] threshold=0.7, result={'result': (1864, 326), 'rectangle': [(1746, 239), (1746, 414), (1982, 414), (1982, 239)], 'confidence': 0.9785833358764648}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.63 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1864, 326), 'rectangle': [(1746, 239), (1746, 414), (1982, 414), (1982, 239)], 'confidence': 0.9785833358764648, 'time': 0.6328105926513672}
+INFO     airtest.core.api:cv.py:59 Try finding: Template(E:\AUTO\pythonProject\modules\function\Remi\img\remi_enter.png)
+DEBUG    airtest.core.api:cv.py:189 try match with MultiScaleTemplateMatchingPre
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.00 s.
+DEBUG    airtest.core.api:cv.py:189 try match with TemplateMatching
+DEBUG    airtest.aircv.template_matching:template_matching.py:84 [Template] threshold=0.7, result={'result': (789, 751), 'rectangle': ((697, 683), (697, 819), (882, 819), (882, 683)), 'confidence': 0.296983927488327}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.08 s.
+DEBUG    airtest.core.api:cv.py:189 try match with SIFTMatching
+DEBUG    airtest.aircv.keypoint_base:keypoint_base.py:85 [SIFT] threshold=0.7, result={'result': (1864, 327), 'rectangle': [(1746, 240), (1746, 414), (1983, 414), (1983, 240)], 'confidence': 0.9923246204853058}
+DEBUG    airtest.aircv.utils:utils.py:21 find_best_result() run time is 0.64 s.
+DEBUG    airtest.core.api:cv.py:155 match result: {'result': (1864, 327), 'rectangle': [(1746, 240), (1746, 414), (1983, 414), (1983, 240)], 'confidence': 0.9923246204853058, 'time': 0.6413013935089111}
+DEBUG    airtest.core.android.adb:adb.py:187 C:\Program Files\Unity\Hub\Editor\2022.3.23f1\Editor\Data\PlaybackEngines\AndroidPlayer\SDK\platform-tools\adb.exe -s emulator-5554 shell input tap 1864 327

@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","17279","test_closeWindows","modules.function.login","Mon Jun 16 18:24:20 CST 2025","passed","Mon Jun 16 18:24:38 CST 2025","TestLogin","test_login","",""
+"","0","test_isInMain","modules.function.login","Mon Jun 16 18:24:39 CST 2025","broken","Mon Jun 16 18:24:39 CST 2025","TestLogin","test_login","",""
+"","0","test_connect","modules.function.login","Mon Jun 16 18:23:58 CST 2025","passed","Mon Jun 16 18:23:58 CST 2025","TestLogin","test_login","",""
+"","20524","test_appstart","modules.function.login","Mon Jun 16 18:23:59 CST 2025","passed","Mon Jun 16 18:24:19 CST 2025","TestLogin","test_login","",""

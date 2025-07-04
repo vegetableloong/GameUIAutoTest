@@ -1,0 +1,1 @@
+{"uuid": "21d1b9d2-da84-49f2-a7e9-c32415432bd2", "children": ["6cd3a4fc-e2a4-46f9-aaab-1ae90687782f", "efa77739-0871-4d94-8e7b-ef9e74739c85", "6bfc25d3-ecd7-4a41-85a0-16ceb53349f0", "5aa09d7b-fe5e-4b93-be19-3d62335dd107"], "befores": [{"name": "connect_devcice", "status": "passed", "start": 1750069722676, "stop": 1750069724985}], "start": 1750069722676, "stop": 1750069738484}

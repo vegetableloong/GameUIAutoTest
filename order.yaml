@@ -3,8 +3,12 @@
 
 #登录在main单独执行，失败会直接结束整个进度
 
+#QIUQIU
+- modules/function/KamarBiasa/test_kamar.py::TestKamarEnter
+
 #Remi
 - modules/function/Remi/test_remiEnter.py::TestRemiEnter
 
 #QIUQIU
 - modules/function/QiuQIu/test_qiuqiuEnter.py::TestQiuqiuEnter
+

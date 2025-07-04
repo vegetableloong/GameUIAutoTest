@@ -1,0 +1,298 @@
+2025-06-16 18:29:46,516 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 wait-for-device
+2025-06-16 18:29:46,614 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell getprop ro.build.version.sdk
+2025-06-16 18:29:49,742 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell dumpsys package com.netease.nie.yosemite
+2025-06-16 18:29:49,849 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 forward --no-rebind tcp:15394 localabstract:javacap_15394
+2025-06-16 18:29:49,944 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell pm path com.netease.nie.yosemite
+2025-06-16 18:29:50,048 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell CLASSPATH=/data/app/com.netease.nie.yosemite-QDakP4cbYaOG9cISZ6t3_g==/base.apk exec app_process /system/bin com.netease.nie.yosemite.Capture --scale 100 --socket javacap_15394 -lazy 2>&1
+2025-06-16 18:29:50,252 - DEBUG - [javacap_sever]b'Capture server listening on @javacap_15394'
+2025-06-16 18:29:50,356 - DEBUG - (1, 3, 0, 2400, 1080, 0, 0, 0, 1)
+2025-06-16 18:29:51,628 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell am force-stop com.neptune.domino
+2025-06-16 18:29:51,786 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell monkey -p com.neptune.domino -c android.intent.category.LAUNCHER 1
+2025-06-16 18:30:12,026 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell pidof com.neptune.domino
+2025-06-16 18:30:13,239 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\commond\close\closeAllWindows\close1.png)
+2025-06-16 18:30:13,318 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:13,318 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:13,318 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:13,376 - DEBUG - [Template] threshold=0.7, result={'result': (2185, 90), 'rectangle': ((2164, 69), (2164, 112), (2207, 112), (2207, 69)), 'confidence': 0.6970329284667969}
+2025-06-16 18:30:13,377 - DEBUG - find_best_result() run time is 0.06 s.
+2025-06-16 18:30:13,377 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:13,844 - DEBUG - [SIFT] threshold=0.7, result={'result': [2186, 92], 'rectangle': [(2158, 59), (2158, 124), (2213, 124), (2213, 59)], 'confidence': 0.9164214134216309}
+2025-06-16 18:30:13,845 - DEBUG - find_best_result() run time is 0.47 s.
+2025-06-16 18:30:13,845 - DEBUG - match result: {'result': [2186, 92], 'rectangle': [(2158, 59), (2158, 124), (2213, 124), (2213, 59)], 'confidence': 0.9164214134216309, 'time': 0.4683654308319092}
+2025-06-16 18:30:13,846 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\commond\close\closeAllWindows\close1.png)
+2025-06-16 18:30:13,921 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:13,921 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:13,921 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:13,973 - DEBUG - [Template] threshold=0.7, result={'result': (2185, 90), 'rectangle': ((2164, 69), (2164, 112), (2207, 112), (2207, 69)), 'confidence': 0.6970325708389282}
+2025-06-16 18:30:13,974 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:13,974 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:14,426 - DEBUG - [SIFT] threshold=0.7, result={'result': [2186, 92], 'rectangle': [(2158, 59), (2158, 124), (2213, 124), (2213, 59)], 'confidence': 0.9164214134216309}
+2025-06-16 18:30:14,426 - DEBUG - find_best_result() run time is 0.45 s.
+2025-06-16 18:30:14,426 - DEBUG - match result: {'result': [2186, 92], 'rectangle': [(2158, 59), (2158, 124), (2213, 124), (2213, 59)], 'confidence': 0.9164214134216309, 'time': 0.4518289566040039}
+2025-06-16 18:30:14,427 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell ls -l /data/local/tmp/rotationwatcher.jar
+2025-06-16 18:30:14,536 - DEBUG - install_rotationwatcher skipped
+2025-06-16 18:30:14,536 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell app_process -Djava.class.path=/data/local/tmp/rotationwatcher.jar /data/local/tmp com.example.rotationwatcher.Main
+2025-06-16 18:30:14,783 - DEBUG - [rotation_server]b'0'
+2025-06-16 18:30:15,583 - INFO - update orientation None->0
+2025-06-16 18:30:15,583 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell wm size
+2025-06-16 18:30:15,693 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell getprop ro.sf.lcd_density
+2025-06-16 18:30:15,797 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell dumpsys SurfaceFlinger
+2025-06-16 18:30:15,906 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell getevent -p
+2025-06-16 18:30:16,213 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell input tap 2186 92
+2025-06-16 18:30:16,672 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\commond\close\closeAllWindows\close2.png)
+2025-06-16 18:30:16,746 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:16,746 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:16,746 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:16,799 - DEBUG - [Template] threshold=0.7, result={'result': (2186, 89), 'rectangle': ((2161, 68), (2161, 111), (2211, 111), (2211, 68)), 'confidence': 0.9602317214012146}
+2025-06-16 18:30:16,800 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:16,800 - DEBUG - match result: {'result': (2186, 89), 'rectangle': ((2161, 68), (2161, 111), (2211, 111), (2211, 68)), 'confidence': 0.9602317214012146, 'time': 0.05367588996887207}
+2025-06-16 18:30:16,801 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\commond\close\closeAllWindows\close2.png)
+2025-06-16 18:30:16,872 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:16,872 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:16,872 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:16,927 - DEBUG - [Template] threshold=0.7, result={'result': (2186, 89), 'rectangle': ((2161, 68), (2161, 111), (2211, 111), (2211, 68)), 'confidence': 0.958914577960968}
+2025-06-16 18:30:16,928 - DEBUG - find_best_result() run time is 0.06 s.
+2025-06-16 18:30:16,928 - DEBUG - match result: {'result': (2186, 89), 'rectangle': ((2161, 68), (2161, 111), (2211, 111), (2211, 68)), 'confidence': 0.958914577960968, 'time': 0.055633544921875}
+2025-06-16 18:30:16,929 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell input tap 2186 89
+2025-06-16 18:30:17,404 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\commond\close\closeAllWindows\close3.png)
+2025-06-16 18:30:17,477 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:17,477 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:17,477 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:17,528 - DEBUG - [Template] threshold=0.7, result={'result': (346, 96), 'rectangle': ((313, 70), (313, 122), (379, 122), (379, 70)), 'confidence': 0.5880353450775146}
+2025-06-16 18:30:17,529 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:17,529 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:17,976 - DEBUG - find_best_result() run time is 0.45 s.
+2025-06-16 18:30:17,976 - DEBUG - try match with BRISKMatching
+2025-06-16 18:30:18,172 - DEBUG - 'Not enough feature points in input images !'
+2025-06-16 18:30:18,174 - DEBUG - match result: None
+2025-06-16 18:30:18,747 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:18,747 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:18,747 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:18,806 - DEBUG - [Template] threshold=0.7, result={'result': (347, 96), 'rectangle': ((314, 70), (314, 122), (380, 122), (380, 70)), 'confidence': 0.5836209654808044}
+2025-06-16 18:30:18,807 - DEBUG - find_best_result() run time is 0.06 s.
+2025-06-16 18:30:18,807 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:19,261 - DEBUG - find_best_result() run time is 0.45 s.
+2025-06-16 18:30:19,261 - DEBUG - try match with BRISKMatching
+2025-06-16 18:30:19,455 - DEBUG - 'Not enough feature points in input images !'
+2025-06-16 18:30:19,459 - DEBUG - match result: None
+2025-06-16 18:30:20,029 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:20,029 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:20,029 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:20,081 - DEBUG - [Template] threshold=0.7, result={'result': (346, 96), 'rectangle': ((313, 70), (313, 122), (379, 122), (379, 70)), 'confidence': 0.5879842042922974}
+2025-06-16 18:30:20,083 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:20,083 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:20,537 - DEBUG - find_best_result() run time is 0.45 s.
+2025-06-16 18:30:20,537 - DEBUG - try match with BRISKMatching
+2025-06-16 18:30:20,725 - DEBUG - 'Not enough feature points in input images !'
+2025-06-16 18:30:20,728 - DEBUG - match result: None
+2025-06-16 18:30:20,730 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\commond\close\closeAllWindows\close1.png)
+2025-06-16 18:30:20,806 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:20,806 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:20,806 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:20,874 - DEBUG - [Template] threshold=0.7, result={'result': (439, 775), 'rectangle': ((418, 754), (418, 797), (461, 797), (461, 754)), 'confidence': 0.5952809453010559}
+2025-06-16 18:30:20,875 - DEBUG - find_best_result() run time is 0.07 s.
+2025-06-16 18:30:20,875 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:21,304 - DEBUG - find_best_result() run time is 0.43 s.
+2025-06-16 18:30:21,304 - DEBUG - try match with BRISKMatching
+2025-06-16 18:30:21,496 - DEBUG - 'Not enough feature points in input images !'
+2025-06-16 18:30:21,500 - DEBUG - match result: None
+2025-06-16 18:30:22,068 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:22,068 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:22,068 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:22,121 - DEBUG - [Template] threshold=0.7, result={'result': (439, 775), 'rectangle': ((418, 754), (418, 797), (461, 797), (461, 754)), 'confidence': 0.5952809453010559}
+2025-06-16 18:30:22,122 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:22,122 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:22,557 - DEBUG - find_best_result() run time is 0.44 s.
+2025-06-16 18:30:22,558 - DEBUG - try match with BRISKMatching
+2025-06-16 18:30:22,756 - DEBUG - 'Not enough feature points in input images !'
+2025-06-16 18:30:22,761 - DEBUG - match result: None
+2025-06-16 18:30:23,327 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:23,328 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:23,328 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:23,379 - DEBUG - [Template] threshold=0.7, result={'result': (439, 775), 'rectangle': ((418, 754), (418, 797), (461, 797), (461, 754)), 'confidence': 0.5952795147895813}
+2025-06-16 18:30:23,380 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:23,380 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:23,845 - DEBUG - find_best_result() run time is 0.47 s.
+2025-06-16 18:30:23,845 - DEBUG - try match with BRISKMatching
+2025-06-16 18:30:24,050 - DEBUG - 'Not enough feature points in input images !'
+2025-06-16 18:30:24,055 - DEBUG - match result: None
+2025-06-16 18:30:24,056 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\commond\close\closeAllWindows\close2.png)
+2025-06-16 18:30:24,121 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:24,121 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:24,121 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:24,170 - DEBUG - [Template] threshold=0.7, result={'result': (428, 471), 'rectangle': ((403, 450), (403, 493), (453, 493), (453, 450)), 'confidence': 0.6305914521217346}
+2025-06-16 18:30:24,170 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:24,171 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:24,608 - DEBUG - find_best_result() run time is 0.44 s.
+2025-06-16 18:30:24,608 - DEBUG - try match with BRISKMatching
+2025-06-16 18:30:24,808 - DEBUG - 'Not enough feature points in input images !'
+2025-06-16 18:30:24,815 - DEBUG - match result: None
+2025-06-16 18:30:25,392 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:25,392 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:25,393 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:25,445 - DEBUG - [Template] threshold=0.7, result={'result': (348, 994), 'rectangle': ((323, 973), (323, 1016), (373, 1016), (373, 973)), 'confidence': 0.537527859210968}
+2025-06-16 18:30:25,446 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:25,446 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:25,893 - DEBUG - find_best_result() run time is 0.45 s.
+2025-06-16 18:30:25,893 - DEBUG - try match with BRISKMatching
+2025-06-16 18:30:26,089 - DEBUG - 'Not enough feature points in input images !'
+2025-06-16 18:30:26,092 - DEBUG - match result: None
+2025-06-16 18:30:26,668 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:26,668 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:26,668 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:26,722 - DEBUG - [Template] threshold=0.7, result={'result': (49, 824), 'rectangle': ((24, 803), (24, 846), (74, 846), (74, 803)), 'confidence': 0.530443549156189}
+2025-06-16 18:30:26,723 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:26,723 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:27,171 - DEBUG - find_best_result() run time is 0.45 s.
+2025-06-16 18:30:27,171 - DEBUG - try match with BRISKMatching
+2025-06-16 18:30:27,366 - DEBUG - 'Not enough feature points in input images !'
+2025-06-16 18:30:27,369 - DEBUG - match result: None
+2025-06-16 18:30:27,370 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\commond\close\closeAllWindows\close3.png)
+2025-06-16 18:30:27,439 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:27,440 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:27,440 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:27,495 - DEBUG - [Template] threshold=0.7, result={'result': (346, 96), 'rectangle': ((313, 70), (313, 122), (379, 122), (379, 70)), 'confidence': 0.5865386724472046}
+2025-06-16 18:30:27,496 - DEBUG - find_best_result() run time is 0.06 s.
+2025-06-16 18:30:27,496 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:27,971 - DEBUG - find_best_result() run time is 0.48 s.
+2025-06-16 18:30:27,971 - DEBUG - try match with BRISKMatching
+2025-06-16 18:30:28,168 - DEBUG - 'Not enough feature points in input images !'
+2025-06-16 18:30:28,171 - DEBUG - match result: None
+2025-06-16 18:30:28,742 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:28,742 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:28,742 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:28,801 - DEBUG - [Template] threshold=0.7, result={'result': (347, 96), 'rectangle': ((314, 70), (314, 122), (380, 122), (380, 70)), 'confidence': 0.5839829444885254}
+2025-06-16 18:30:28,802 - DEBUG - find_best_result() run time is 0.06 s.
+2025-06-16 18:30:28,802 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:29,265 - DEBUG - find_best_result() run time is 0.46 s.
+2025-06-16 18:30:29,266 - DEBUG - try match with BRISKMatching
+2025-06-16 18:30:29,458 - DEBUG - 'Not enough feature points in input images !'
+2025-06-16 18:30:29,460 - DEBUG - match result: None
+2025-06-16 18:30:30,030 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:30,030 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:30,031 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:30,082 - DEBUG - [Template] threshold=0.7, result={'result': (346, 96), 'rectangle': ((313, 70), (313, 122), (379, 122), (379, 70)), 'confidence': 0.5872359275817871}
+2025-06-16 18:30:30,083 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:30,083 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:30,534 - DEBUG - find_best_result() run time is 0.45 s.
+2025-06-16 18:30:30,534 - DEBUG - try match with BRISKMatching
+2025-06-16 18:30:30,728 - DEBUG - 'Not enough feature points in input images !'
+2025-06-16 18:30:30,732 - DEBUG - match result: None
+2025-06-16 18:30:31,818 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\function\login\img\main_view.png)
+2025-06-16 18:30:31,886 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:31,886 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:31,886 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:31,940 - DEBUG - [Template] threshold=0.7, result={'result': (1155, 977), 'rectangle': ((670, 914), (670, 1040), (1640, 1040), (1640, 914)), 'confidence': 0.3114435076713562}
+2025-06-16 18:30:31,941 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:31,941 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:32,750 - DEBUG - [SIFT] threshold=0.7, result={'result': (1091, 988), 'rectangle': [(465, 908), (465, 1069), (1717, 1069), (1717, 908)], 'confidence': 0.9895059764385223}
+2025-06-16 18:30:32,750 - DEBUG - find_best_result() run time is 0.81 s.
+2025-06-16 18:30:32,750 - DEBUG - match result: {'result': (1091, 988), 'rectangle': [(465, 908), (465, 1069), (1717, 1069), (1717, 908)], 'confidence': 0.9895059764385223, 'time': 0.8092045783996582}
+2025-06-16 18:30:32,948 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 wait-for-device
+2025-06-16 18:30:33,070 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell getprop ro.build.version.sdk
+2025-06-16 18:30:33,174 - WARNING - Device:emulator-5554 updated <airtest.core.android.android.Android object at 0x0000014B2B67C790> -> <airtest.core.android.android.Android object at 0x0000014B2BCEE880>
+2025-06-16 18:30:36,204 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell dumpsys package com.netease.nie.yosemite
+2025-06-16 18:30:36,333 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 forward --no-rebind tcp:15886 localabstract:javacap_15886
+2025-06-16 18:30:36,433 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell pm path com.netease.nie.yosemite
+2025-06-16 18:30:36,538 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell CLASSPATH=/data/app/com.netease.nie.yosemite-QDakP4cbYaOG9cISZ6t3_g==/base.apk exec app_process /system/bin com.netease.nie.yosemite.Capture --scale 100 --socket javacap_15886 -lazy 2>&1
+2025-06-16 18:30:36,725 - DEBUG - [javacap_sever]b'Capture server listening on @javacap_15886'
+2025-06-16 18:30:36,831 - DEBUG - (1, 3, 0, 2400, 1080, 0, 0, 0, 1)
+2025-06-16 18:30:36,993 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\function\Remi\img\remi_enter.png)
+2025-06-16 18:30:37,063 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:37,063 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:37,063 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:37,125 - DEBUG - [Template] threshold=0.7, result={'result': (1856, 325), 'rectangle': ((1764, 257), (1764, 393), (1949, 393), (1949, 257)), 'confidence': 0.3454183340072632}
+2025-06-16 18:30:37,126 - DEBUG - find_best_result() run time is 0.06 s.
+2025-06-16 18:30:37,126 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:37,627 - DEBUG - [SIFT] threshold=0.7, result={'result': (1875, 336), 'rectangle': [(1757, 252), (1757, 420), (1993, 420), (1993, 252)], 'confidence': 0.906739741563797}
+2025-06-16 18:30:37,627 - DEBUG - find_best_result() run time is 0.50 s.
+2025-06-16 18:30:37,627 - DEBUG - match result: {'result': (1875, 336), 'rectangle': [(1757, 252), (1757, 420), (1993, 420), (1993, 252)], 'confidence': 0.906739741563797, 'time': 0.5008127689361572}
+2025-06-16 18:30:37,629 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\function\Remi\img\remi_enter.png)
+2025-06-16 18:30:37,700 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:37,700 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:37,700 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:37,764 - DEBUG - [Template] threshold=0.7, result={'result': (1858, 320), 'rectangle': ((1766, 252), (1766, 388), (1951, 388), (1951, 252)), 'confidence': 0.3030942678451538}
+2025-06-16 18:30:37,765 - DEBUG - find_best_result() run time is 0.06 s.
+2025-06-16 18:30:37,765 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:38,280 - DEBUG - [SIFT] threshold=0.7, result={'result': (1870, 332), 'rectangle': [(1752, 246), (1752, 418), (1989, 418), (1989, 246)], 'confidence': 0.9540714621543884}
+2025-06-16 18:30:38,280 - DEBUG - find_best_result() run time is 0.52 s.
+2025-06-16 18:30:38,280 - DEBUG - match result: {'result': (1870, 332), 'rectangle': [(1752, 246), (1752, 418), (1989, 418), (1989, 246)], 'confidence': 0.9540714621543884, 'time': 0.5150454044342041}
+2025-06-16 18:30:38,281 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell ls -l /data/local/tmp/rotationwatcher.jar
+2025-06-16 18:30:38,388 - DEBUG - install_rotationwatcher skipped
+2025-06-16 18:30:38,388 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell app_process -Djava.class.path=/data/local/tmp/rotationwatcher.jar /data/local/tmp com.example.rotationwatcher.Main
+2025-06-16 18:30:38,572 - DEBUG - [rotation_server]b'0'
+2025-06-16 18:30:39,436 - INFO - update orientation None->0
+2025-06-16 18:30:39,436 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell wm size
+2025-06-16 18:30:39,552 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell getprop ro.sf.lcd_density
+2025-06-16 18:30:39,655 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell dumpsys SurfaceFlinger
+2025-06-16 18:30:39,758 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell getevent -p
+2025-06-16 18:30:40,089 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell input tap 1870 332
+2025-06-16 18:30:41,620 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\function\QiuQIu\img\back.png)
+2025-06-16 18:30:41,686 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:41,686 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:41,687 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:41,737 - DEBUG - [Template] threshold=0.7, result={'result': (2245, 60), 'rectangle': ((2203, 27), (2203, 93), (2287, 93), (2287, 27)), 'confidence': 0.49654504656791687}
+2025-06-16 18:30:41,738 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:41,738 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:42,138 - DEBUG - [SIFT] threshold=0.7, result={'result': [170, 75], 'rectangle': [(115, 20), (115, 130), (224, 130), (224, 20)], 'confidence': 0.7737450897693634}
+2025-06-16 18:30:42,138 - DEBUG - find_best_result() run time is 0.40 s.
+2025-06-16 18:30:42,139 - DEBUG - match result: {'result': [170, 75], 'rectangle': [(115, 20), (115, 130), (224, 130), (224, 20)], 'confidence': 0.7737450897693634, 'time': 0.40005970001220703}
+2025-06-16 18:30:42,139 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\function\QiuQIu\img\back.png)
+2025-06-16 18:30:42,203 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:42,203 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:42,203 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:42,257 - DEBUG - [Template] threshold=0.7, result={'result': (2245, 60), 'rectangle': ((2203, 27), (2203, 93), (2287, 93), (2287, 27)), 'confidence': 0.49654504656791687}
+2025-06-16 18:30:42,258 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:42,258 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:42,694 - DEBUG - [SIFT] threshold=0.7, result={'result': [170, 75], 'rectangle': [(115, 20), (115, 130), (224, 130), (224, 20)], 'confidence': 0.7737450897693634}
+2025-06-16 18:30:42,694 - DEBUG - find_best_result() run time is 0.44 s.
+2025-06-16 18:30:42,694 - DEBUG - match result: {'result': [170, 75], 'rectangle': [(115, 20), (115, 130), (224, 130), (224, 20)], 'confidence': 0.7737450897693634, 'time': 0.43570995330810547}
+2025-06-16 18:30:42,695 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell input tap 170 75
+2025-06-16 18:30:44,247 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\function\QiuQIu\img\qiuqiu_enter.png)
+2025-06-16 18:30:44,314 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:44,314 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:44,314 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:44,366 - DEBUG - [Template] threshold=0.7, result={'result': (2048, 959), 'rectangle': ((1976, 919), (1976, 999), (2120, 999), (2120, 919)), 'confidence': 0.3306562602519989}
+2025-06-16 18:30:44,366 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:44,366 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:44,869 - DEBUG - [SIFT] threshold=0.7, result={'result': (1548, 367), 'rectangle': [(1456, 318), (1456, 416), (1640, 416), (1640, 318)], 'confidence': 0.9711684286594391}
+2025-06-16 18:30:44,869 - DEBUG - find_best_result() run time is 0.50 s.
+2025-06-16 18:30:44,869 - DEBUG - match result: {'result': (1548, 367), 'rectangle': [(1456, 318), (1456, 416), (1640, 416), (1640, 318)], 'confidence': 0.9711684286594391, 'time': 0.5021407604217529}
+2025-06-16 18:30:44,869 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\function\QiuQIu\img\qiuqiu_enter.png)
+2025-06-16 18:30:44,953 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:44,953 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:44,953 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:45,006 - DEBUG - [Template] threshold=0.7, result={'result': (505, 498), 'rectangle': ((433, 458), (433, 538), (577, 538), (577, 458)), 'confidence': 0.3524284362792969}
+2025-06-16 18:30:45,007 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:45,007 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:45,493 - DEBUG - [SIFT] threshold=0.7, result={'result': (1549, 367), 'rectangle': [(1457, 319), (1457, 416), (1641, 416), (1641, 319)], 'confidence': 0.9571827054023743}
+2025-06-16 18:30:45,493 - DEBUG - find_best_result() run time is 0.49 s.
+2025-06-16 18:30:45,493 - DEBUG - match result: {'result': (1549, 367), 'rectangle': [(1457, 319), (1457, 416), (1641, 416), (1641, 319)], 'confidence': 0.9571827054023743, 'time': 0.48502326011657715}
+2025-06-16 18:30:45,494 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell input tap 1549 367
+2025-06-16 18:30:47,029 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\function\QiuQIu\img\back.png)
+2025-06-16 18:30:47,090 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:47,090 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:47,090 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:47,142 - DEBUG - [Template] threshold=0.7, result={'result': (2245, 60), 'rectangle': ((2203, 27), (2203, 93), (2287, 93), (2287, 27)), 'confidence': 0.5064241290092468}
+2025-06-16 18:30:47,143 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:47,143 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:47,545 - DEBUG - [SIFT] threshold=0.7, result={'result': (168, 73), 'rectangle': [(114, 30), (114, 116), (223, 116), (223, 30)], 'confidence': 0.9870051741600037}
+2025-06-16 18:30:47,545 - DEBUG - find_best_result() run time is 0.40 s.
+2025-06-16 18:30:47,545 - DEBUG - match result: {'result': (168, 73), 'rectangle': [(114, 30), (114, 116), (223, 116), (223, 30)], 'confidence': 0.9870051741600037, 'time': 0.40267157554626465}
+2025-06-16 18:30:47,546 - INFO - Try finding: Template(E:\AUTO\pythonProject\modules\function\QiuQIu\img\back.png)
+2025-06-16 18:30:47,611 - DEBUG - try match with MultiScaleTemplateMatchingPre
+2025-06-16 18:30:47,612 - DEBUG - find_best_result() run time is 0.00 s.
+2025-06-16 18:30:47,612 - DEBUG - try match with TemplateMatching
+2025-06-16 18:30:47,665 - DEBUG - [Template] threshold=0.7, result={'result': (2245, 60), 'rectangle': ((2203, 27), (2203, 93), (2287, 93), (2287, 27)), 'confidence': 0.5064241290092468}
+2025-06-16 18:30:47,666 - DEBUG - find_best_result() run time is 0.05 s.
+2025-06-16 18:30:47,666 - DEBUG - try match with SIFTMatching
+2025-06-16 18:30:48,122 - DEBUG - [SIFT] threshold=0.7, result={'result': (168, 73), 'rectangle': [(114, 30), (114, 116), (223, 116), (223, 30)], 'confidence': 0.9870051741600037}
+2025-06-16 18:30:48,123 - DEBUG - find_best_result() run time is 0.46 s.
+2025-06-16 18:30:48,123 - DEBUG - match result: {'result': (168, 73), 'rectangle': [(114, 30), (114, 116), (223, 116), (223, 30)], 'confidence': 0.9870051741600037, 'time': 0.45643019676208496}
+2025-06-16 18:30:48,123 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell input tap 168 73
+2025-06-16 18:30:50,954 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 forward --remove tcp:15394
+2025-06-16 18:30:51,050 - DEBUG - E:\MuMu Player 12\shell\adb.exe -s emulator-5554 forward --remove tcp:15886
+2025-06-16 18:30:51,160 - DEBUG - [rotation_server]b''
+2025-06-16 18:30:51,173 - DEBUG - [javacap_sever]b''
+2025-06-16 18:30:51,187 - DEBUG - [rotation_server]b''
+2025-06-16 18:30:51,200 - DEBUG - [javacap_sever]b''

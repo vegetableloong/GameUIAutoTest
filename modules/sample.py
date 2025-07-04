@@ -1,13 +1,9 @@
 # test_mm.py
 # -*- coding:utf-8 -*-
 #控制模块和类的执行顺序用/order.yaml配置，用例类内部的执行顺序自行通过@pytest.mark.order控制
-import allure
-import os
-from airtest.core.api import *
-from modules.commond.sceenShot import *
-from modules.commond.imgDict import *
+
 from modules.commond.close.closeAllWindows import *
-from modules.commond.startApp import *
+from modules.commond.existsClick import *
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 #获取相关图片路径

@@ -8,6 +8,9 @@ import logging
 import yaml
 import clean
 
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
+
 
 if __name__ == '__main__':
     # 打开聚合报告

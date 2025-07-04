@@ -1,0 +1,8 @@
+{
+  "name": "20250616182353",
+  "sum": 4,
+  "passed": 3,
+  "failExample": [
+    "TestLogin#test_isInMain"
+  ]
+}
