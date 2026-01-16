@@ -1,7 +1,7 @@
 import pytest
 import re
-from modules.commond.connect import *
-from modules.commond.sceenShot import *
+from modules.common.connect import *
+from modules.common.sceenShot import *
 
 #自动连接
 @pytest.fixture(autouse=True, scope="session")

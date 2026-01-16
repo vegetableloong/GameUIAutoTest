@@ -1,8 +1,0 @@
-{
-  "name": "20250612174729",
-  "sum": 8,
-  "passed": 7,
-  "failExample": [
-    "TestRemiEnter#test_enter"
-  ]
-}

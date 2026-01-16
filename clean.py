@@ -10,7 +10,7 @@ summary_path = os.path.join(base_dir, "report", "summary")
 backup_path = os.path.join(base_dir, "report", "history")
 
 # 清理的时间阈值（天）
-days_threshold = 30
+days_threshold = 365
 now = datetime.datetime.now()
 cutoff = now - datetime.timedelta(days=days_threshold)
 print(cutoff)

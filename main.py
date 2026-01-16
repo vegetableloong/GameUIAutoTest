@@ -41,18 +41,19 @@ if __name__ == '__main__':
     )
 
     # 第一次只跑登录
+    # 报错直接停止后续用例
     login_case = "modules/function/login/test_login.py"
     login_args = ["-s", "-x", "--alluredir=" + json_dir, "--clean-alluredir", login_case]
     result = pytest.main(login_args)
 
     #执行pytest用例，新增用例记得添加order.yaml配置
     #pytest.main(["-s", "--alluredir=" + json_dir])
+    #--maxfail=3 表示允许最多 3 个失败后停止。
     if result == 0:
         with open("order.yaml", "r", encoding='utf-8') as f:
             cases = yaml.safe_load(f)
-            args = ["-s", "--alluredir=" + json_dir] + cases
+            args = ["-s", "--maxfail=3", "--alluredir=" + json_dir] + cases
             pytest.main(args)
-
 
 
     # 将测试报告转为html格式

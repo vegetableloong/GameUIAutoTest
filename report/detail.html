@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试详情</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 20px;
+    }
+
+    .header-left h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00d9ff, #00ff88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .header-left p {
+      color: #8892b0;
+      font-size: 0.9rem;
+    }
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      color: #ccd6f6;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .back-btn:hover {
+      background: rgba(0, 217, 255, 0.2);
+      border-color: #00d9ff;
+      color: #00d9ff;
+    }
+
+    /* Summary Cards */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .summary-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .summary-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 217, 255, 0.3);
+    }
+
+    .summary-card .label {
+      color: #8892b0;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .summary-card .value {
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .summary-card.success .value { color: #00ff88; }
+    .summary-card.danger .value { color: #ff4757; }
+    .summary-card.info .value { color: #00d9ff; }
+    .summary-card.warning .value { color: #ffa502; }
+
+    /* Progress Section */
+    .progress-section {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .progress-header h3 {
+      color: #ccd6f6;
+      font-size: 1.1rem;
+    }
+
+    .progress-bar-container {
+      height: 24px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 12px;
+      transition: width 0.5s ease;
+      background: linear-gradient(90deg, #00ff88, #00d9ff);
+    }
+
+    .progress-text {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Filter & Pagination */
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+    }
+
+    .filter-tab {
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #8892b0;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-tab:hover {
+      background: rgba(0, 217, 255, 0.1);
+      border-color: #00d9ff;
+    }
+
+    .filter-tab.active {
+      background: rgba(0, 217, 255, 0.2);
+      border-color: #00d9ff;
+      color: #00d9ff;
+    }
+
+    .filter-tab .count {
+      margin-left: 6px;
+      padding: 2px 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+
+    .pagination-controls {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .page-size-select {
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #ccd6f6;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .page-info {
+      color: #8892b0;
+      font-size: 0.85rem;
+    }
+
+    .page-btn {
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #ccd6f6;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .page-btn:hover:not(:disabled) {
+      background: rgba(0, 217, 255, 0.2);
+      border-color: #00d9ff;
+    }
+
+    .page-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Results Table */
+    .results-section {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .results-header h3 {
+      color: #ccd6f6;
+      font-size: 1.1rem;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1200px;
+    }
+
+    th, td {
+      padding: 12px 10px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    th {
+      background: rgba(0, 0, 0, 0.3);
+      color: #8892b0;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    th.num { width: 60px; }
+    th.name { width: 200px; text-align: left; }
+    th.duration { width: 80px; }
+    th.status { width: 80px; }
+    th.screenshot { width: 150px; }
+    th.error { width: 250px; text-align: left; }
+    th.module { width: 150px; }
+
+    tr {
+      transition: all 0.2s;
+    }
+
+    tr:hover {
+      background: rgba(0, 217, 255, 0.03);
+    }
+
+    td {
+      color: #ccd6f6;
+      font-size: 0.85rem;
+      vertical-align: middle;
+    }
+
+    td.name-cell {
+      text-align: left;
+      font-weight: 500;
+    }
+
+    td.duration-cell {
+      font-family: monospace;
+      color: #8892b0;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      min-width: 50px;
+    }
+
+    .status-badge.pass {
+      background: rgba(0, 255, 136, 0.15);
+      color: #00ff88;
+    }
+
+    .status-badge.fail {
+      background: rgba(255, 71, 87, 0.15);
+      color: #ff4757;
+    }
+
+    .status-badge.pass::before {
+      content: 'P';
+      font-size: 0.7rem;
+    }
+
+    .status-badge.fail::before {
+      content: 'F';
+      font-size: 0.7rem;
+    }
+
+    .screenshot-cell {
+      text-align: center;
+    }
+
+    .screenshot-thumb {
+      width: 80px;
+      height: 45px;
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .screenshot-thumb:hover {
+      border-color: #00d9ff;
+    }
+
+    .error-cell {
+      text-align: left;
+      max-width: 250px;
+    }
+
+    .error-text {
+      color: #ff6b81;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+    }
+
+    .error-text:hover {
+      color: #ff4757;
+    }
+
+    .module-cell {
+      color: #5a6a8a;
+      font-size: 0.8rem;
+    }
+
+    /* Loading State */
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      border-top-color: #00d9ff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #8892b0;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .modal-close:hover {
+      opacity: 1;
+    }
+
+    .modal-image {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+
+    .modal-error {
+      background: rgba(30, 30, 50, 0.95);
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow: auto;
+    }
+
+    .modal-error h4 {
+      color: #ff4757;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .modal-error pre {
+      font-family: 'Consolas', monospace;
+      font-size: 0.85rem;
+      color: #ccd6f6;
+      white-space: pre-wrap;
+      word-break: break-all;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+
+      .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .filter-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .pagination-controls {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-left">
+        <h1 id="reportTitle">测试详情</h1>
+        <p id="reportTime">-</p>
+      </div>
+      <a href="index.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        返回仪表盘
+      </a>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-grid">
+      <div class="summary-card info">
+        <div class="label">总用例数</div>
+        <div class="value" id="totalCount">-</div>
+      </div>
+      <div class="summary-card success">
+        <div class="label">通过</div>
+        <div class="value" id="passedCount">-</div>
+      </div>
+      <div class="summary-card danger">
+        <div class="label">失败</div>
+        <div class="value" id="failedCount">-</div>
+      </div>
+      <div class="summary-card warning">
+        <div class="label">通过率</div>
+        <div class="value" id="passRate">-</div>
+      </div>
+    </div>
+
+    <!-- Progress Section -->
+    <div class="progress-section">
+      <div class="progress-header">
+        <h3>测试进度</h3>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="progressBar" style="width: 0%">
+          <span class="progress-text" id="progressText">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">全部 <span class="count" id="countAll">0</span></button>
+        <button class="filter-tab" data-filter="passed">通过 <span class="count" id="countPassed">0</span></button>
+        <button class="filter-tab" data-filter="failed">失败 <span class="count" id="countFailed">0</span></button>
+      </div>
+      <div class="pagination-controls">
+        <span class="page-info">每页显示:</span>
+        <select class="page-size-select" id="pageSize">
+          <option value="20">20条</option>
+          <option value="30">30条</option>
+          <option value="50" selected>50条</option>
+        </select>
+        <span class="page-info" id="pageInfo">0 / 0</span>
+        <button class="page-btn" id="prevPage" disabled>上一页</button>
+        <button class="page-btn" id="nextPage" disabled>下一页</button>
+      </div>
+    </div>
+
+    <!-- Results Table -->
+    <div class="results-section">
+      <div class="results-header">
+        <h3>测试结果</h3>
+      </div>
+      <div class="table-wrapper">
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th class="num">编号</th>
+              <th class="name">用例名</th>
+              <th class="duration">耗时</th>
+              <th class="status">状态</th>
+              <th class="screenshot">截图</th>
+              <th class="error">错误信息</th>
+              <th class="module">所属模块</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <td colspan="7" class="loading">
+                <div class="spinner"></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screenshot Modal -->
+  <div class="modal" id="screenshotModal" onclick="closeModal(event)">
+    <span class="modal-close" onclick="closeModal(event)">&times;</span>
+    <img id="modalImage" class="modal-image" alt="Screenshot">
+  </div>
+
+  <!-- Error Modal -->
+  <div class="modal" id="errorModal" onclick="closeModal(event)">
+    <span class="modal-close" onclick="closeModal(event)">&times;</span>
+    <div class="modal-error">
+      <h4>错误详情</h4>
+      <pre id="modalErrorText"></pre>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = 'http://10.100.0.153:8080';
+    let allResults = [];
+    let currentFilter = 'all';
+    let currentPage = 1;
+    let pageSize = 50;
+
+    // 获取 URL 参数
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // 格式化时间
+    function formatDuration(ms) {
+      if (ms < 1000) return `${ms}ms`;
+      if (ms < 60000) return `${(ms / 1000).toFixed(2)}s`;
+      return `${Math.floor(ms / 60000)}m ${((ms % 60000) / 1000).toFixed(0)}s`;
+    }
+
+    // 获取模块名称
+    function getModuleName(fullName) {
+      if (!fullName) return '-';
+      const parts = fullName.split('.');
+      if (parts.length >= 2) {
+        return parts.slice(0, parts.length - 1).join('.');
+      }
+      return fullName;
+    }
+
+    // 加载测试数据
+    async function loadTestData() {
+      const reportName = getQueryParam('name') || getQueryParam('id');
+      if (!reportName) {
+        document.getElementById('tableBody').innerHTML = '<tr><td colspan="7" class="empty-state"><h3>缺少报告名称参数</h3></td></tr>';
+        return;
+      }
+
+      // 更新标题
+      if (reportName.length === 14) {
+        const year = reportName.substring(0, 4);
+        const month = reportName.substring(4, 6);
+        const day = reportName.substring(6, 8);
+        const hour = reportName.substring(8, 10);
+        const minute = reportName.substring(10, 12);
+        const second = reportName.substring(12, 14);
+        document.getElementById('reportTitle').textContent = `测试详情 - ${year}-${month}-${day} ${hour}:${minute}:${second}`;
+      }
+
+      try {
+        const serverIP = window.location.hostname !== 'localhost'
+          ? `http://${window.location.hostname}:8080`
+          : API_BASE;
+
+        // 加载 summary 数据
+        const response = await fetch(`${serverIP}/report/summary/${reportName}.json`);
+        if (!response.ok) throw new Error('报告不存在');
+
+        const summaryData = await response.json();
+        document.getElementById('reportTime').textContent = `共 ${summaryData.sum} 个测试用例`;
+
+        const passed = summaryData.passed;
+        const failed = summaryData.sum - passed;
+        const passRate = summaryData.sum > 0 ? (passed / summaryData.sum) * 100 : 0;
+
+        document.getElementById('totalCount').textContent = summaryData.sum;
+        document.getElementById('passedCount').textContent = passed;
+        document.getElementById('failedCount').textContent = failed;
+        document.getElementById('passRate').textContent = `${passRate.toFixed(1)}%`;
+
+        const progressBar = document.getElementById('progressBar');
+        progressBar.style.width = `${passRate}%`;
+        document.getElementById('progressText').textContent = `${passRate.toFixed(1)}%`;
+
+        // 加载 allure 结果 JSON 文件
+        const jsonResponse = await fetch(`${serverIP}/report/allure-results/${reportName}/json`);
+        const jsonFiles = await jsonResponse.json();
+
+        // 只处理 result.json 文件
+        const resultFiles = jsonFiles.filter(f => f.endsWith('-result.json'));
+
+        allResults = [];
+        for (const file of resultFiles) {
+          try {
+            const fileResponse = await fetch(`${serverIP}/report/allure-results/${reportName}/json/${file}`);
+            const testData = await fileResponse.json();
+
+            // 获取截图 - 先查找 attachments 中的图片，如果没有则尝试从 img 文件夹获取
+            let screenshotPath = null;
+            if (testData.attachments && Array.isArray(testData.attachments) && testData.attachments.length > 0) {
+              const imgAtt = testData.attachments.find(a =>
+                a.type === 'image/png' || a.source.endsWith('.png') || a.source.endsWith('.jpg')
+              );
+              if (imgAtt) {
+                screenshotPath = `${serverIP}/report/allure-results/${reportName}/${imgAtt.source}`;
+              }
+            }
+            // 如果 attachments 中没有图片，尝试从 img 文件夹查找
+            if (!screenshotPath && testData.fullName) {
+              // 从 fullName 提取类名和方法名，如 "modules.function.login.test_login.TestLogin#test_connect"
+              const match = testData.fullName.match(/([\w]+)#([\w]+)$/);
+              if (match) {
+                const className = match[1];
+                const methodName = match[2];
+                // 截图文件名格式: TestLogin_test_connect.jpg
+                const imgFileName = `${className}_${methodName}.jpg`;
+                screenshotPath = `${serverIP}/report/allure-results/${reportName}/img/${imgFileName}`;
+              }
+            }
+            // 如果仍然没有，尝试直接用 name
+            if (!screenshotPath && testData.name) {
+              const imgFileName = `${testData.name}.jpg`;
+              screenshotPath = `${serverIP}/report/allure-results/${reportName}/img/${imgFileName}`;
+            }
+
+            // 获取错误信息 (Allure 使用 statusDetails 或 failure)
+            let errorMessage = null;
+            if (testData.statusDetails && testData.statusDetails.message) {
+              errorMessage = testData.statusDetails.message;
+            } else if (testData.failure && testData.failure.message) {
+              errorMessage = testData.failure.message;
+            }
+
+            allResults.push({
+              name: testData.name,
+              fullName: testData.fullName,
+              status: testData.status,
+              duration: testData.stop - testData.start,
+              start: testData.start,
+              failure: testData.failure,
+              screenshot: screenshotPath,
+              errorMessage: errorMessage
+            });
+          } catch (e) {
+            console.warn(`跳过文件 ${file}:`, e);
+          }
+        }
+
+        // 按开始时间正序排列（从远到近）
+        allResults.sort((a, b) => (a.start || 0) - (b.start || 0));
+
+        // 更新过滤计数
+        document.getElementById('countAll').textContent = allResults.length;
+        document.getElementById('countPassed').textContent = allResults.filter(r => r.status === 'passed').length;
+        document.getElementById('countFailed').textContent = allResults.filter(r => r.status === 'failed').length;
+
+        // 渲染表格
+        renderTable();
+
+      } catch (err) {
+        console.error('加载数据失败:', err);
+        document.getElementById('tableBody').innerHTML = `<tr><td colspan="7" class="empty-state"><h3 style="color: #ff4757;">加载失败: ${err.message}</h3></td></tr>`;
+      }
+    }
+
+    // 获取过滤后的数据
+    function getFilteredData() {
+      if (currentFilter === 'all') return allResults;
+      return allResults.filter(r => r.status === currentFilter);
+    }
+
+    // 渲染表格
+    function renderTable() {
+      const tbody = document.getElementById('tableBody');
+      const filtered = getFilteredData();
+      const totalPages = Math.ceil(filtered.length / pageSize);
+      const start = (currentPage - 1) * pageSize;
+      const data = filtered.slice(start, start + pageSize);
+      const globalStart = allResults.indexOf(filtered[0]);
+
+      // 更新分页控件
+      document.getElementById('pageInfo').textContent = `${currentPage} / ${totalPages}`;
+      document.getElementById('prevPage').disabled = currentPage <= 1;
+      document.getElementById('nextPage').disabled = currentPage >= totalPages;
+
+      if (data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="empty-state"><h3>暂无数据</h3></td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = data.map((test, index) => {
+        const globalIndex = allResults.indexOf(test) + 1;
+        const moduleName = getModuleName(test.fullName);
+        const statusText = test.status === 'passed' ? '通过' : '失败';
+
+        return `
+          <tr>
+            <td>${globalIndex}</td>
+            <td class="name-cell">${test.name}</td>
+            <td class="duration-cell">${formatDuration(test.duration)}</td>
+            <td>
+              <span class="status-badge ${test.status}">${statusText}</span>
+            </td>
+            <td class="screenshot-cell">
+              ${test.screenshot
+                ? `<img src="${test.screenshot}" class="screenshot-thumb" onerror="this.style.display='none'" onclick="showScreenshot('${test.screenshot}')" alt="截图">`
+                : '-'}
+            </td>
+            <td class="error-cell">
+              ${test.errorMessage
+                ? `<span class="error-text" onclick="showError('${test.errorMessage.replace(/'/g, "\\'")}')" title="点击查看详情">${test.errorMessage}</span>`
+                : '-'}
+            </td>
+            <td class="module-cell">${moduleName}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // 切换分页
+    function goToPage(page) {
+      const filtered = getFilteredData();
+      const totalPages = Math.ceil(filtered.length / pageSize);
+      if (page >= 1 && page <= totalPages) {
+        currentPage = page;
+        renderTable();
+      }
+    }
+
+    // 切换每页数量
+    function changePageSize(size) {
+      pageSize = parseInt(size);
+      currentPage = 1;
+      renderTable();
+    }
+
+    // 切换过滤
+    function changeFilter(filter) {
+      currentFilter = filter;
+      currentPage = 1;
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.filter === filter);
+      });
+      renderTable();
+    }
+
+    // 显示截图
+    function showScreenshot(src) {
+      document.getElementById('modalImage').src = src;
+      document.getElementById('screenshotModal').classList.add('show');
+    }
+
+    // 显示错误详情
+    function showError(message) {
+      document.getElementById('modalErrorText').textContent = message;
+      document.getElementById('errorModal').classList.add('show');
+    }
+
+    // 关闭弹窗
+    function closeModal(event) {
+      if (!event || event.target === document.getElementById('screenshotModal') ||
+          event.target === document.getElementById('errorModal') ||
+          event.target.classList.contains('modal-close')) {
+        document.getElementById('screenshotModal').classList.remove('show');
+        document.getElementById('errorModal').classList.remove('show');
+      }
+    }
+
+    // 键盘事件
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.getElementById('screenshotModal').classList.remove('show');
+        document.getElementById('errorModal').classList.remove('show');
+      }
+    });
+
+    // 初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      loadTestData();
+
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.addEventListener('click', () => changeFilter(tab.dataset.filter));
+      });
+
+      document.getElementById('prevPage').addEventListener('click', () => goToPage(currentPage - 1));
+      document.getElementById('nextPage').addEventListener('click', () => goToPage(currentPage + 1));
+      document.getElementById('pageSize').addEventListener('change', (e) => changePageSize(e.target.value));
+    });
+  </script>
+</body>
+</html>

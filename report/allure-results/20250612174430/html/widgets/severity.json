@@ -1,1 +1,0 @@
-[{"uid":"a4b48a61d680a258","name":"test_connect","time":{"start":1749721474539,"stop":1749721474539,"duration":0},"status":"passed","severity":"normal"},{"uid":"1a7c01c3871e4b80","name":"test_appstart","time":{"start":1749721475649,"stop":1749721496136,"duration":20487},"status":"broken","severity":"normal"}]

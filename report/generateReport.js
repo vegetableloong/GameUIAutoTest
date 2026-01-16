@@ -16,7 +16,10 @@ const exampleName = args[0];
 const imgDirName =  'img' // 图片文件夹名
 
 function readAllJsonFiles(dirPath) {
-  const allData = [];
+  //console.log(`readAllJsonFiles:${dirPath}`)
+  const dataList = [];
+  const countExample = {count:0,pass:0,fail:0}
+  const allData = {countExample:countExample,data:dataList};
   let id = 1;
 
   if (!fs.existsSync(dirPath)) {
@@ -45,7 +48,14 @@ function readAllJsonFiles(dirPath) {
         //打印错误信息
         const errmsg = data.status === 'failed' ? data.statusDetails.message : ''
 
-        allData.push({
+        allData.countExample.count += 1
+        if(data.status === 'passed'){
+          allData.countExample.pass += 1
+        }else {
+          allData.countExample.fail += 1
+        }
+
+        allData.data.push({
           id: id++,
           name: data.name || '',
           duration: duration,
@@ -61,6 +71,7 @@ function readAllJsonFiles(dirPath) {
       }
     }
   }
+  //console.log(`统计用例数: ${allData.countExample.count}, ${allData.countExample.pass}, ${allData.countExample.fail}`);
   return allData;
 }
 
@@ -203,7 +214,10 @@ function generateHtmlReport(data, outputPath = 'my_test_report', title = '测试
   </style>
 </head>
 <body>
-  <h2>${title}</h2>
+  <h1>${title}</h1>
+  <h2 style="margin-top:-120px;text-align:right;">用例总计：${data.countExample.count}</h2>
+  <h2 style="margin-top:-25px;text-align:right;">通过：${data.countExample.pass}</h2>
+  <h2 style="margin-top:-25px;text-align:right;">失败：${data.countExample.fail}</h2>
 
   <table id="testTable">
     <thead>
@@ -219,7 +233,7 @@ function generateHtmlReport(data, outputPath = 'my_test_report', title = '测试
       </tr>
     </thead>
     <tbody id="tableBody">
-      ${data
+      ${data.data
       .sort((b, a) => new Date(b.start) - new Date(a.start)) // 按开始时间降序排序
       .map((row, index) => {
         row.id = index + 1;
@@ -270,11 +284,11 @@ function generateHtmlReport(data, outputPath = 'my_test_report', title = '测试
     <script>
       let currentPage = 1;
       let rowsPerPage = ${defaultRowsPerPage}; // 默认每页显示20条
-      let totalPages = Math.ceil(${data.length} / rowsPerPage);;
+      let totalPages = Math.ceil(${data.data.length} / rowsPerPage);;
       
       // 更新总页数并重新渲染
       function updateTotalPages() {
-        totalPages = Math.ceil(${data.length} / rowsPerPage);
+        totalPages = Math.ceil(${data.data.length} / rowsPerPage);
       }
   
       function renderTable() {
@@ -360,10 +374,14 @@ function runGenerate(exampleName) {
   const timestamp = exampleName;
   const jsonDir = path.join(baseDir, 'allure-results', timestamp, 'json');
   const outputDir = path.join(baseDir, 'allure-results', timestamp);
+  //console.log(`runGenerate文件：jsonDir ${jsonDir}`)
 
   const testData = readAllJsonFiles(jsonDir);
+  //console.log(`runGenerate文件：testData ${testData.data}`)
   generateHtmlReport(testData, outputDir, `测试报告 - ${timestamp}`);
+
 }
+
 
 //最终生成报告
 runGenerate(exampleName);

@@ -1,94 +1,148 @@
 # UI自动化测试
-基于airtest+pytest二次封装的UI自动化测试工具
 
-# 配置环境
-安装python3.9版本
-https://www.python.org/ftp/python/3.9.13/python-3.9.13-amd64.exe
-```
-#python安装第三方库airtest
-pip install airtest
+基于 Airtest + Pytest 二次封装的 UI 自动化测试工具，支持 Android 应用自动化测试。
 
-#python安装第三方库pytest+allure
-pip install pytest
-pip install pytest-allure
-```
-安装JavaScript
-https://nodejs.org/dist/v22.16.0/node-v22.16.0-x64.msi
+## 功能特性
 
-# 目录结构
-``` |-- /
-    |-- modules  
-    |   |-- commond                    #通用模块，封装了公共接口
-    |   |   |-- connect.py
-    |   |   |-- getFunctionName.py
-    |   |   |-- imgDict.py
-    |   |   |-- sceenShot.py
-    |   |   |-- startApp.py
-    |   |-- function                   #按功能模块分类，测试用例在该目录编写
-    |       |-- login                  #登录测试
-    |       |   |-- test_login.py      #按pytest的规则命名，test_开头
-    |       |   |-- img                #该模块用例在UI识别需要用到图片都放在img目录
-    |       |   |   |-- main_view.png  
-    |   |-- sample.py                  #测试用例范例
-    |-- report                         #测试报告目录
-    |   |-- generateReport.js          #生成单次测试报告脚本
-    |   |-- index.html                 #聚合报告首页
-    |   |-- process.js
-    |   |-- report.js                  #聚合报告脚本
-    |   |-- server.js
-    |   |-- summary.js
-    |   |-- allure-results             #单次测试报告目录
-    |   |-- history                    #历史报告，超过指定天数的报告移到历史报告里
-    |   |-- public
-    |   |-- summary                    #聚合报告数据
-    |-- clean.py
-    |-- conf.py
-    |-- config.json                    #公共配置
-    |-- conftest.py                    #pytest公共脚本
-    |-- main.py                        
-    |-- order.yaml                     #测试用例执行顺序配置
-    |-- package-lock.json
-    |-- package.json
-    |-- pytest.ini                     #pytest配置
-    |-- README.md
- ```
+- **UI 自动化测试**：基于 Airtest 框架，支持图片识别和坐标操作
+- **测试报告系统**：现代化的 Web 报告界面，支持聚合报告和详细报告
+- **失败用例统计**：自动统计高频失败用例，帮助快速定位问题
+- **报告过期清理**：自动清理 365 天前的旧报告
 
-# 编写用例
+## 快速开始
 
-新增用例，需要在modules目录下编写，按照目录结构参照已有的目录结构规范化
+### 环境要求
+
+- Python 3.9+
+- Node.js (用于报告服务器)
+
+### 安装依赖
+
+```bash
+# Python 依赖
+pip install airtest pytest
+
+# Node.js 依赖
+cd report
+npm install
 ```
-    |-- modules  
-    |   |-- function                  
-    |       |-- login                  #模块命名
-    |       |   |-- test_login.py      #测试用例集合脚本，按pytest的规则命名，test_开头
-    |       |   |-- img                #该模块用例在UI识别需要用到图片都放在img目录
-    |       |   |   |-- main_view.png  #图片命名建议规范易读
+
+### 运行测试
+
+```bash
+python main.py
 ```
-用例集合脚本，可参考sample.py
+
+### 查看报告
+
+```bash
+cd report
+node server.js
 ```
-# test_mm.py  
-# -*- coding:utf-8 -*-  
-#控制模块和类的执行顺序用/order.yaml配置，用例类内部的执行顺序自行通过@pytest.mark.order控制  
-import allure  
-import os  
-from airtest.core.api import *  
-from modules.commond.sceenShot import *  
-from modules.commond.imgDict import *  
-from modules.commond.close.closeAllWindows import *  
-from modules.commond.startApp import *  
-  
-base_dir = os.path.dirname(os.path.abspath(__file__))  
-#获取相关图片路径  
-img_dir = os.path.join(base_dir,"img")  
-imgDict = getImgDict(img_dir)  
-  
-#注：所有的类名必须唯一  
-class TestSample:  
-  
-    #增加设备连接用例打印，实际以通过conftest.py执行连接  
-    def test_sample(self):  
-        print("范例，这里编写具体的测试步骤")
+
+访问 http://localhost:8080 查看测试报告。
+
+## 目录结构
+
 ```
-# 界面展示
-![主界面](/report/public/reportMainView.png "主界面")
-![详细报告](/report/public/reportDetailView.png "详细报告")
+|-- /
+    |-- modules/
+    |   |-- common/                    # 公共模块，封装了通用接口
+    |   |   |-- connect.py             # 设备连接
+    |   |   |-- functionAPI.py         # 封装 Airtest API
+    |   |   |-- getFunctionName.py     # 获取函数名
+    |   |   |-- imgDict.py             # 图片字典管理
+    |   |   |-- sceenShot.py           # 截图
+    |   |   |-- startApp.py            # 启动应用
+    |   |   |-- checkData.py           # 数据校验（OCR等）
+    |   |-- function/                  # 功能模块，测试用例编写目录
+    |       |-- login/                 # 登录测试模块
+    |       |   |-- test_login.py      # 测试用例（pytest 规范：test_ 开头）
+    |       |   |-- img/               # UI 识别图片
+    |       |   |   |-- main_view.png
+    |-- report/                        # 测试报告目录
+    |   |-- index.html                 # 聚合报告首页
+    |   |-- detail.html                # 详细测试报告
+    |   |-- report.js                  # 聚合报告逻辑
+    |   |-- server.js                  # 报告服务器
+    |   |-- summary/                   # 聚合报告数据
+    |   |-- allure-results/            # 单次测试结果目录
+    |   |-- history/                   # 历史报告（365天前自动移动到此）
+    |-- clean.py                       # 报告清理脚本
+    |-- conftest.py                    # pytest 配置
+    |-- main.py                        # 主入口
+    |-- config.json                    # 配置文件
+    |-- order.yaml                     # 用例执行顺序配置
+```
+
+## 编写测试用例
+
+### 新增模块
+
+在 `modules/function/` 下创建新目录：
+
+```
+modules/
+└── function/
+    └── new_module/
+        ├── test_newmodule.py   # 测试用例集合
+        └── img/                # UI 识别图片
+            └── button.png
+```
+
+### 用例模板
+
+```python
+# test_example.py
+# -*- coding:utf-8 -*-
+import allure
+from airtest.core.api import *
+from modules.common.sceenShot import *
+from modules.common.imgDict import *
+
+class TestExample:
+
+    @allure.step("执行测试步骤")
+    def test_example(self):
+        """测试用例示例"""
+        # 截图
+        auto_screenshot("步骤描述")
+
+        # 点击图片
+        click_img("button.png", "点击失败")
+
+        # 等待图片出现
+        wait_img("loading.png")
+
+        # 检查图片是否存在
+        exists_img("success.png", "未找到成功页面")
+```
+
+## 报告说明
+
+### 聚合报告 (index.html)
+
+![聚合报告1](/report/public/reportMainView1.png)
+![聚合报告2](/report/public/reportMainView2.png)
+
+### 详细报告 (detail.html)
+
+![详细报告](/report/public/reportDetailView1.png)
+
+## 配置说明
+
+### config.json
+
+```json
+{
+  "exampleName": "20260116151330"
+}
+```
+
+### order.yaml
+
+控制用例执行顺序：
+
+```yaml
+- modules.function.login.test_login.TestLogin
+```

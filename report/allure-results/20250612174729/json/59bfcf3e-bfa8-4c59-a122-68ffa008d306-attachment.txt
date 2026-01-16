@@ -1,8 +1,0 @@
-DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 wait-for-device
-DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell getprop ro.build.version.sdk
-DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell dumpsys package com.netease.nie.yosemite
-DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 forward --no-rebind tcp:16999 localabstract:javacap_16999
-DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell pm path com.netease.nie.yosemite
-DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell CLASSPATH=/data/app/com.netease.nie.yosemite-QDakP4cbYaOG9cISZ6t3_g==/base.apk exec app_process /system/bin com.netease.nie.yosemite.Capture --scale 100 --socket javacap_16999 -lazy 2>&1
-DEBUG    airtest.utils.nbsp:nbsp.py:37 [javacap_sever]b'Capture server listening on @javacap_16999'
-DEBUG    airtest.core.android.cap_methods.javacap:javacap.py:77 (1, 3, 0, 2400, 1080, 0, 0, 0, 1)

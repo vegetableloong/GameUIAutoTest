@@ -1,3 +1,0 @@
-DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell am force-stop com.neptune.domino
-DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell monkey -p com.neptune.domino -c android.intent.category.LAUNCHER 1
-DEBUG    airtest.core.android.adb:adb.py:187 E:\MuMu Player 12\shell\adb.exe -s emulator-5554 shell pidof com.neptune.domino
