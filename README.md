@@ -40,7 +40,7 @@ cd report
 node server.js
 ```
 
-访问 http://localhost:8080 查看测试报告。
+访问 http://127.0.0.1/:8080 查看测试报告。
 
 ## 目录结构
 
