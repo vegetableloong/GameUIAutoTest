@@ -1,0 +1,52 @@
+# GameUIAutoTest 依赖清单
+#
+# 一键安装全部核心依赖：
+#     pip install -r requirements.txt
+#
+# 如果需要做游戏内金币等数值校验（OCR），追加安装：
+#     pip install rapidocr-onnxruntime
+
+# =====================================================================
+# 核心依赖（必装）
+# =====================================================================
+
+# Airtest 框架：图像识别 + Android 设备控制（核心）
+airtest>=1.3.4
+
+# OpenCV：图像处理 + 模板匹配（airtest 内部也强依赖）
+opencv-python>=4.5.0
+
+# pytest：测试运行器
+pytest>=7.0
+
+# allure-pytest：把 pytest 结果转成 Allure 报告格式
+# （注意：这只是 pytest 插件，allure 命令行需要另外装，见下方）
+allure-pytest>=2.13.0
+
+# pyyaml：读取 order.yaml（用例执行顺序配置）
+pyyaml>=6.0
+
+
+# =====================================================================
+# 可选依赖
+# =====================================================================
+
+# RapidOCR：游戏内金币数值校验（用不到 OCR 时不要装，免得拉 onnxruntime）
+# modules/common/checkData.py 已做 ImportError 兜底，未装不会导致项目启动失败
+# rapidocr-onnxruntime>=1.3.0
+
+
+# =====================================================================
+# 系统级工具（不在 pip 里，需单独装）
+# =====================================================================
+
+# Allure 命令行（main.py 通过 subprocess 调 `allure generate`）
+#   macOS:    brew install allure
+#   Windows:  scoop install allure
+#   通用:     npm install -g allure-commandline
+
+# Node.js + npm（跑自研 Web 报告系统 report/server.js）
+#   https://nodejs.org/
+
+# ADB（连接 Android 设备）
+#   Android Studio 自带；或 brew install --cask android-platform-tools

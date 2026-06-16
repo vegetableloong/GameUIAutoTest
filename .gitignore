@@ -1,0 +1,78 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# mypy / linter
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+dmypy.json
+
+# ===== Node.js =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.parcel-cache/
+
+# ===== 报告运行时数据（核心：含游戏截图/日志，绝对不能上传） =====
+report/allure-results/
+report/summary/
+report/history/
+report/log/
+
+# ===== IDE / 编辑器 =====
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ===== 项目专属 =====
+# 临时日志（如果写在项目根目录）
+*.log
+execution.log
+
+# pytest 自定义配置
+# pytest.ini 不忽略，conftest.py 不忽略
+
+# ===== Claude Code =====
+.claude/
+
+# 测试模块的 UI 模板图（含游戏 UI 截图，不上传）
+modules/function/**/img/
