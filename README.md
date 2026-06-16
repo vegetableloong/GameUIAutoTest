@@ -209,7 +209,7 @@ class TestExample:
 }
 ```
 
-`exampleName`（本次运行的时间戳）由 `main.py` 启动时自动生成，通过环境变量 `EXAMPLE_NAME` 传递给子进程，不再写死在配置文件里。
+`package` 填自己游戏的包名
 
 ### order.yaml
 
